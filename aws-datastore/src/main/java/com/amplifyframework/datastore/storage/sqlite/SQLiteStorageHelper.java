@@ -104,9 +104,9 @@ final class SQLiteStorageHelper extends SQLiteOpenHelper implements ModelUpdateS
         super.onOpen(sqliteDatabase);
         if (!sqliteDatabase.isReadOnly()) {
             sqliteDatabase.execSQL("PRAGMA foreign_keys = ON;");
-            // enables case sensitivity for LIKE operations
-            sqliteDatabase.execSQL("PRAGMA case_sensitive_like = 1;");
         }
+        // enables case sensitivity for LIKE operations
+        sqliteDatabase.execSQL("PRAGMA case_sensitive_like = 1;");
     }
 
     /**
